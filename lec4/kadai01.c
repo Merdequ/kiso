@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h> //log powを使うのに必要
 
 /*
   調和級数 \sum_{i=1}^{n}(1 / i)
 */
 double harmonic(int n) {
   int i;
-  for (i = 0;i <= n;i++) {
-    sum += 1 / i;
+  double sum = 0; //宣言が必要
+  for (i = 1;i <= n;i++) {
+    sum += 1 / (double)i; //double型にキャスト
   }
 
   return sum;
@@ -17,7 +19,7 @@ int main() {
   double sum = 0;
   int i;
   int upto = 5;
-  int log_val;
+  double log_val; //double型で宣言
   double harmonic_val;
   int N;
 
